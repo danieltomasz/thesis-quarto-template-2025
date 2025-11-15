@@ -8,17 +8,37 @@ This template includes:
 
 - **UGent Blue Color Scheme**: Official Ghent University blue (RGB 30, 100, 200) applied to links, citations, and document elements
 - **UGent Branding**: Pre-configured with Ghent University name and structure
-- **Font Settings**: Configured for Arial 12pt (UGent standard) using XeLaTeX/LuaLaTeX
+- **UGent Panno Font**: Configured to use official UGent Panno Text font (requires font files in `include/fonts/`)
+- **Typography Enhancements**: Includes paragraph indentation, microtype, and epigraph support
 - **A4 Format**: Standard A4 paper size with appropriate margins
 - **Biblatex Support**: Compatible with Quarto 1.4+ using biber backend (fixes bibliography rendering issues in Quarto 1.5+)
+- **Enhanced Figure Handling**: Improved figure placement using float package
 
 ## Requirements
 
 - Quarto 1.4 or higher
-- XeLaTeX or LuaLaTeX (for Arial font support)
+- XeLaTeX or LuaLaTeX (for UGent Panno font support)
 - Biber (for bibliography processing)
+- UGent Panno Text font files (see Font Setup below)
 
-### Customizing for Your Thesis
+## Font Setup
+
+This template is configured to use the official **UGent Panno Text** font. To use it:
+
+1. Obtain the UGent Panno font files from:
+   - UGent Staff Portal (for staff and PhD students)
+   - Your faculty's communication department
+   - UGent Style Guide: https://styleguide.ugent.be/
+
+2. Place the following font files in the `include/fonts/` directory:
+   - `UGentPannoText-Normal.ttf`
+   - `UGentPannoText-SemiBold.ttf`
+
+3. Render your thesis using XeLaTeX or LuaLaTeX (default)
+
+**Note**: The UGent Panno fonts are proprietary and require proper authorization. See `include/fonts/README.md` for more details and alternative font options.
+
+## Customizing for Your Thesis
 
 Edit the `_quarto.yml` file to add your personal information:
 

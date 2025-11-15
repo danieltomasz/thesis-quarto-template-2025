@@ -59,6 +59,46 @@ format:
     citecolor: ugentblue
     toclinkcolor: black
     toc-depth: 2
-    mainfont: "Arial"
     fontsize: 12pt
+    include-in-header:
+      text: |
+        %%
+        %% Paragraph indentation
+        %%
+        \usepackage{indentfirst}  % Indents the first paragraph of each section
+        \setlength{\parindent}{2em}
+        %%
+        %% Other packages
+        %%
+        \usepackage{epigraph}
+        \usepackage{microtype}
+        %%
+        %% Fonts - UGent Panno Text
+        %% Place font files in include/fonts/ directory:
+        %% - UGentPannoText-Normal.ttf
+        %% - UGentPannoText-SemiBold.ttf
+        %%
+        \usepackage{mathpazo}
+        \setmainfont[
+        Path=include/fonts/,
+        BoldFont=UGentPannoText-SemiBold.ttf,
+        ItalicFont=UGentPannoText-Normal.ttf,
+        BoldItalicFont=UGentPannoText-SemiBold.ttf,]
+        {UGentPannoText-Normal.ttf}
+        %%
+        %% Figures
+        %%
+        \graphicspath{{figures}{chapters/figures}{../figures}{chapters}}
+        \usepackage{float}
+        \let\origfigure\figure
+        \let\endorigfigure\endfigure
+        \renewenvironment{figure}[1][2] {
+            \expandafter\origfigure\expandafter[H]
+        } {
+            \endorigfigure
+        }
+    include-before-body:
+      text: |
+        \pagestyle{plain}
+        \pagenumbering{roman}
 

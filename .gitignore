@@ -43,3 +43,30 @@ vignettes/*.pdf
 .DS_Store
 */DS_Store
 /.quarto/
+
+# UGent Panno fonts (proprietary - do not commit)
+include/fonts/*.ttf
+include/fonts/*.otf
+
+# LaTeX build artifacts
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+*.lof
+*.lot
+*.idx
+*.ind
+*.ilg
+*-blx.bib
+
+# Thesis PDF output
+/*.pdf
+!/README.pdf
