@@ -8,16 +8,16 @@ contributes:
       classoption: ["11pt", "english", "singlespacing", "headsepline"]
       format-resources:
         - MastersDoctoralThesis.cls
-      template-partials: 
+      template-partials:
         - "partials/title.tex"
         - "partials/before-body.tex"
       toc: false
       toc-depth: 3
-      include-before-body: 
+      include-before-body:
         - partials/definitions.tex
-      include-in-header: 
+      include-in-header:
         - partials/in-header.tex
-      geometry: 
+      geometry:
         - paper=a4paper
         - inner=2.5cm
         - outer=3.8cm
@@ -29,3 +29,7 @@ contributes:
       linkcolor: blue
       urlcolor: red
       toclinkcolor: black
+      biblatex: true
+      biblio-style: authoryear
+      biblatexoptions:
+        - natbib=true

@@ -3,7 +3,9 @@
 
 %\usepackage{mathpazo} % Use the Palatino font by default
 
-\usepackage[backend=bibtex, style=authoryear, natbib=true]{biblatex} % Use the bibtex backend with the authoryear citation style (which resembles APA)
+% biblatex is now loaded by Quarto via _extension.yml settings (biblatex: true, biblio-style: authoryear, biblatexoptions)
+% Do not load biblatex here to avoid option clash
+%\usepackage[backend=biber, style=authoryear, natbib=true]{biblatex}
 
 \usepackage[autostyle=true]{csquotes} % Required to generate language-dependent quotes in the bibliography
 
