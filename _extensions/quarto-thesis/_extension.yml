@@ -32,4 +32,5 @@ contributes:
       biblatex: true
       biblio-style: authoryear
       biblatexoptions:
+        - backend=biber
         - natbib=true
