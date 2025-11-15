@@ -23,7 +23,15 @@ This template includes:
 
 ## Font Setup
 
-This template is configured to use the official **UGent Panno Text** font. To use it:
+This template is configured to use the official **UGent Panno Text** font with automatic fallback to similar fonts if unavailable.
+
+### Font Priority (automatic detection):
+1. **UGent Panno Text** (if font files are placed in `include/fonts/`)
+2. **Arial** (system font)
+3. **Helvetica Neue** (macOS)
+4. **Liberation Sans** (Linux/open source alternative)
+
+### To use UGent Panno fonts:
 
 1. Obtain the UGent Panno font files from:
    - UGent Staff Portal (for staff and PhD students)
@@ -36,7 +44,7 @@ This template is configured to use the official **UGent Panno Text** font. To us
 
 3. Render your thesis using XeLaTeX or LuaLaTeX (default)
 
-**Note**: The UGent Panno fonts are proprietary and require proper authorization. See `include/fonts/README.md` for more details and alternative font options.
+**Note**: If UGent Panno fonts are not available, the template will automatically use an available sans-serif font. No configuration changes needed! See `include/fonts/README.md` for more details.
 
 ## Customizing for Your Thesis
 
@@ -94,7 +102,7 @@ For a LaTeX document, the class file `MasterDoctoralThesis.cls` in the `_extensi
 
 ### Adding content
 
-* start adding Chapters in qmd format to the Chapters folder.
+* start adding chapters in qmd format to the `chapters/` folder.
 * then add the chapter (or appendix) to the `_quarto.yml` file
 
 <img width="305" alt="image" src="https://github.com/nmfs-opensci/quarto-thesis/assets/2545978/3cbd21f5-185f-4930-8699-a623af15fd84">
@@ -123,4 +131,4 @@ This template is based on the [Masters/Doctoral Thesis, LaTeX Template, Version 
 
 ## Warning. Chapter 1 has R code
 
-Python and Julia users: After you install the extension, search for `{r}` in `Chapters/Chapter1.qmd` and get rid of the R code (for a table and a figure) or replace with Python or Julia code.
+Python and Julia users: After you install the extension, search for `{r}` in `chapters/Chapter1.qmd` and get rid of the R code (for a table and a figure) or replace with Python or Julia code.

@@ -12,10 +12,10 @@ book:
   abstract: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam quis accumsan ante. Quisque lorem metus, varius id urna eget, lacinia dapibus sem. Etiam laoreet, quam ac mollis congue, arcu leo dictum neque, nec euismod sem enim luctus odio. Donec condimentum tortor sit amet mollis volutpat. Donec ornare libero vel velit malesuada consectetur. Vestibulum in sem non justo dignissim congue at quis erat. Integer quis erat vitae mi maximus fringilla tristique nec odio. Morbi non ipsum sapien. Vestibulum tortor est, ultricies in eros et, bibendum iaculis justo. Cras pellentesque enim quam, id pretium lacus lacinia non. Integer velit neque, ultrices a malesuada vel, imperdiet quis enim. Quisque eu facilisis urna, ut faucibus lorem. Donec mollis turpis sed arcu venenatis interdum. Nulla facilisis tortor ac scelerisque consequat."
   chapters:
     - index.qmd
-    - Chapters/Chapter2.qmd
+    - chapters/Chapter2.qmd
     - references.qmd
   appendices:
-    - Appendices/AppendixA.qmd
+    - appendices/AppendixA.qmd
 
   site-url: https://www.ugent.be/
   repo-url: https://github.com/your-username/your-thesis
@@ -31,14 +31,14 @@ thesis:
   department: Your Department
   group: Your Research Group
   faculty: Your Faculty
-  declaration: "Frontmatter/declaration.tex"
+  declaration: "frontmatter/declaration.tex"
   quotation:
     text: "Thanks to my solid academic training, today I can write hundreds of words on virtually any topic without possessing a shred of information, which is how I got a good job in journalism."
     attribution: Dave Barry
-  acknowledgements: "Frontmatter/acknowledgements.tex"
-  abbreviations: "Frontmatter/abbreviations.tex"
-  symbols: "Frontmatter/symbols.tex"
-  dedication: "Frontmatter/dedication.tex"
+  acknowledgements: "frontmatter/acknowledgements.tex"
+  abbreviations: "frontmatter/abbreviations.tex"
+  symbols: "frontmatter/symbols.tex"
+  dedication: "frontmatter/dedication.tex"
   logo: images/logo.png
   logo-height: "3cm"
 
@@ -73,18 +73,44 @@ format:
         \usepackage{epigraph}
         \usepackage{microtype}
         %%
-        %% Fonts - UGent Panno Text
+        %% Fonts - UGent Panno Text with fallback
         %% Place font files in include/fonts/ directory:
         %% - UGentPannoText-Normal.ttf
         %% - UGentPannoText-SemiBold.ttf
         %%
         \usepackage{mathpazo}
-        \setmainfont[
-        Path=include/fonts/,
-        BoldFont=UGentPannoText-SemiBold.ttf,
-        ItalicFont=UGentPannoText-Normal.ttf,
-        BoldItalicFont=UGentPannoText-SemiBold.ttf,]
-        {UGentPannoText-Normal.ttf}
+        \usepackage{iftex}
+        \ifPDFTeX
+          % For pdflatex - use standard fonts
+          \usepackage[T1]{fontenc}
+          \usepackage{helvet}
+          \renewcommand{\familydefault}{\sfdefault}
+        \else
+          % For XeLaTeX/LuaLaTeX - try UGent Panno, fallback to Arial/Helvetica
+          \usepackage{fontspec}
+          \IfFontExistsTF{UGentPannoText-Normal.ttf}{
+            % UGent Panno fonts found - use them
+            \setmainfont[
+              Path=include/fonts/,
+              BoldFont=UGentPannoText-SemiBold.ttf,
+              ItalicFont=UGentPannoText-Normal.ttf,
+              BoldItalicFont=UGentPannoText-SemiBold.ttf,
+              Extension=.ttf
+            ]{UGentPannoText-Normal}
+          }{
+            % UGent Panno not found - fallback to Arial or Helvetica
+            \IfFontExistsTF{Arial}{
+              \setmainfont{Arial}
+            }{
+              \IfFontExistsTF{Helvetica Neue}{
+                \setmainfont{Helvetica Neue}
+              }{
+                % Last resort: Liberation Sans (similar to Arial, widely available)
+                \setmainfont{Liberation Sans}
+              }
+            }
+          }
+        \fi
         %%
         %% Figures
         %%
