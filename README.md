@@ -1,8 +1,66 @@
-[![github](https://img.shields.io/github/v/release/nmfs-opensci/quarto-thesis?color=brightgreen&label=GitHub)](https://github.com/nmfs-opensci/quarto-thesis/releases/latest)
+# Ghent University Doctoral Thesis Template
 
-# quarto-thesis
+Quarto template for Ghent University (Universiteit Gent) doctoral dissertations. This template is adapted from the [nmfs-opensci/quarto-thesis](https://github.com/nmfs-opensci/quarto-thesis) template and customized to meet UGent formatting requirements and branding guidelines.
 
-Quarto extension for a masters or PhD thesis based on Masters/Doctoral Thesis, LaTeX Template, Version 2.5 (27 Aug 2017). You can play with it on RStudio Cloud without installing anything: https://rstudio.cloud/content/4383755  Go to the Build tab (upper right panel) and click Render Book.
+## UGent-Specific Features
+
+This template includes:
+
+- **UGent Blue Color Scheme**: Official Ghent University blue (RGB 30, 100, 200) applied to links, citations, and document elements
+- **UGent Branding**: Pre-configured with Ghent University name and structure
+- **UGent Panno Font**: Configured to use official UGent Panno Text font (requires font files in `include/fonts/`)
+- **Typography Enhancements**: Includes paragraph indentation, microtype, and epigraph support
+- **A4 Format**: Standard A4 paper size with appropriate margins
+- **Biblatex Support**: Compatible with Quarto 1.4+ using biber backend (fixes bibliography rendering issues in Quarto 1.5+)
+- **Enhanced Figure Handling**: Improved figure placement using float package
+
+## Requirements
+
+- Quarto 1.4 or higher
+- XeLaTeX or LuaLaTeX (for UGent Panno font support)
+- Biber (for bibliography processing)
+- UGent Panno Text font files (see Font Setup below)
+
+## Font Setup
+
+This template is configured to use the official **UGent Panno Text** font with automatic fallback to similar fonts if unavailable.
+
+### Font Priority (automatic detection):
+1. **UGent Panno Text** (if font files are placed in `include/fonts/`)
+2. **Arial** (system font)
+3. **Helvetica Neue** (macOS)
+4. **Liberation Sans** (Linux/open source alternative)
+
+### To use UGent Panno fonts:
+
+1. Obtain the UGent Panno font files from:
+   - UGent Staff Portal (for staff and PhD students)
+   - Your faculty's communication department
+   - UGent Style Guide: https://styleguide.ugent.be/
+
+2. Place the following font files in the `include/fonts/` directory:
+   - `UGentPannoText-Normal.ttf`
+   - `UGentPannoText-SemiBold.ttf`
+
+3. Render your thesis using XeLaTeX or LuaLaTeX (default)
+
+**Note**: If UGent Panno fonts are not available, the template will automatically use an available sans-serif font. No configuration changes needed! See `include/fonts/README.md` for more details.
+
+## Customizing for Your Thesis
+
+Edit the `_quarto.yml` file to add your personal information:
+
+```yaml
+thesis:
+  supervisor:
+    name: Prof. Dr. Your Supervisor
+  university: Ghent University
+  department: Your Department Name
+  faculty: Your Faculty Name
+  group: Your Research Group
+```
+
+Based on the Masters/Doctoral Thesis LaTeX Template, Version 2.5 (27 Aug 2017).
 
 ## Quick Start!
 
@@ -44,7 +102,7 @@ For a LaTeX document, the class file `MasterDoctoralThesis.cls` in the `_extensi
 
 ### Adding content
 
-* start adding Chapters in qmd format to the Chapters folder.
+* start adding chapters in qmd format to the `chapters/` folder.
 * then add the chapter (or appendix) to the `_quarto.yml` file
 
 <img width="305" alt="image" src="https://github.com/nmfs-opensci/quarto-thesis/assets/2545978/3cbd21f5-185f-4930-8699-a623af15fd84">
@@ -73,4 +131,4 @@ This template is based on the [Masters/Doctoral Thesis, LaTeX Template, Version 
 
 ## Warning. Chapter 1 has R code
 
-Python and Julia users: After you install the extension, search for `{r}` in `Chapters/Chapter1.qmd` and get rid of the R code (for a table and a figure) or replace with Python or Julia code.
+Python and Julia users: After you install the extension, search for `{r}` in `chapters/Chapter1.qmd` and get rid of the R code (for a table and a figure) or replace with Python or Julia code.

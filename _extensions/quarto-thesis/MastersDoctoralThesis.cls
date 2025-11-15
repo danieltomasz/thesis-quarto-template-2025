@@ -245,7 +245,9 @@
 
 \usepackage{xcolor} % Required for specifying custom colours
 
-\colorlet{mdtRed}{red!50!black}
+% UGent blue - official Ghent University color: RGB(30, 100, 200)
+\definecolor{ugentblue}{RGB}{30,100,200}
+\colorlet{mdtRed}{ugentblue} % Kept for backwards compatibility
 
 
 
@@ -396,8 +398,7 @@ KOMA-script documentation for details.}]{fancyhdr}
 %	ACKNOWLEDGEMENTS PAGE DESIGN
 %----------------------------------------------------------------------------------------
 
-\usepackage{xcolor}
-\colorlet{mdtRed}{red!50!black}
+% UGent blue color already defined above
 \newcommand{\acknowledgementname}{Acknowledgements}
 \providecaptionname{american,australian,british,canadian,english,newzealand,UKenglish,USenglish} {\acknowledgementname}{Acknowledgements} % Acknowledgement text for English countries
 \providecaptionname{german,ngerman,austrian,naustrian}{\acknowledgementname}{Danksagung} % Acknowledgement text for Germanic countries
