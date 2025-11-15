@@ -25,9 +25,9 @@ contributes:
         - top=1.5cm
         - bottom=1.5cm
       colorlinks: true
-      citecolor: magenta
-      linkcolor: blue
-      urlcolor: red
+      citecolor: ugentblue
+      linkcolor: ugentblue
+      urlcolor: ugentblue
       toclinkcolor: black
       biblatex: true
       biblio-style: authoryear

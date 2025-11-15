@@ -1,8 +1,38 @@
-[![github](https://img.shields.io/github/v/release/nmfs-opensci/quarto-thesis?color=brightgreen&label=GitHub)](https://github.com/nmfs-opensci/quarto-thesis/releases/latest)
+# Ghent University Doctoral Thesis Template
 
-# quarto-thesis
+Quarto template for Ghent University (Universiteit Gent) doctoral dissertations. This template is adapted from the [nmfs-opensci/quarto-thesis](https://github.com/nmfs-opensci/quarto-thesis) template and customized to meet UGent formatting requirements and branding guidelines.
 
-Quarto extension for a masters or PhD thesis based on Masters/Doctoral Thesis, LaTeX Template, Version 2.5 (27 Aug 2017). You can play with it on RStudio Cloud without installing anything: https://rstudio.cloud/content/4383755  Go to the Build tab (upper right panel) and click Render Book.
+## UGent-Specific Features
+
+This template includes:
+
+- **UGent Blue Color Scheme**: Official Ghent University blue (RGB 30, 100, 200) applied to links, citations, and document elements
+- **UGent Branding**: Pre-configured with Ghent University name and structure
+- **Font Settings**: Configured for Arial 12pt (UGent standard) using XeLaTeX/LuaLaTeX
+- **A4 Format**: Standard A4 paper size with appropriate margins
+- **Biblatex Support**: Compatible with Quarto 1.4+ using biber backend (fixes bibliography rendering issues in Quarto 1.5+)
+
+## Requirements
+
+- Quarto 1.4 or higher
+- XeLaTeX or LuaLaTeX (for Arial font support)
+- Biber (for bibliography processing)
+
+### Customizing for Your Thesis
+
+Edit the `_quarto.yml` file to add your personal information:
+
+```yaml
+thesis:
+  supervisor:
+    name: Prof. Dr. Your Supervisor
+  university: Ghent University
+  department: Your Department Name
+  faculty: Your Faculty Name
+  group: Your Research Group
+```
+
+Based on the Masters/Doctoral Thesis LaTeX Template, Version 2.5 (27 Aug 2017).
 
 ## Quick Start!
 
