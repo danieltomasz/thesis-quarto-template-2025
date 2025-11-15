@@ -73,14 +73,6 @@ format:
         \usepackage{epigraph}
         \usepackage{microtype}
         %%
-        %% Keep Arabic numerals for appendices
-        %%
-        \renewcommand\appendix{\par
-          \setcounter{chapter}{0}
-          \setcounter{section}{0}
-          \gdef\@chapapp{\appendixname}
-          \gdef\thechapter{\@arabic\c@chapter}}
-        %%
         %% Fonts - UGent Panno Text with fallback
         %% Place font files in include/fonts/ directory:
         %% - UGentPannoText-Normal.ttf
@@ -134,5 +126,4 @@ format:
     include-before-body:
       text: |
         \pagestyle{plain}
-        \pagenumbering{roman}
 
