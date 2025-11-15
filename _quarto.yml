@@ -4,7 +4,7 @@ project:
 
 book:
   title: Doctoral Thesis Title
-  date: 2025
+  date: "2025"
   author:
     name: Your Name
     url:
