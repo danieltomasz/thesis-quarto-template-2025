@@ -1,3 +1,4 @@
 # References {.unnumbered}
 
+\nocite{*}
 \printbibliography[heading=none]
