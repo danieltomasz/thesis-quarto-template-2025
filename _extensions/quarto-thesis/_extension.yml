@@ -31,3 +31,5 @@ contributes:
       toclinkcolor: black
       biblatex: true
       biblio-style: authoryear
+      biblatexoptions:
+        - natbib=true
